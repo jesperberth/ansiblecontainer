@@ -1,0 +1,22 @@
+{
+    "name": "Ansible",
+    "dockerFile": "Dockerfile",
+
+    "settings": {
+
+    },
+
+    "extensions": [
+        "redhat.ansible",
+        "oderwat.indent-rainbow",
+        "shardulm94.trailing-spaces",
+        "tyriar.sort-lines"
+    ],
+
+    "postCreateCommand": "",
+
+    "mounts": [
+        "source=${localEnv:USERPROFILE}/.azure,target=/root/.azure,type=bind,consistency=cached",
+        "source=${localEnv:USERPROFILE}/.aws,target=/root/.aws,type=bind,consistency=cached"
+    ]
+}
