@@ -5,7 +5,7 @@ ENV ANSIBLE_VERSION 2.10.5
 ARG DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y openssh-client sshpass curl wget apt-transport-https lsb-release python3-pip git unzip; \
-    apt-get clean
+    apt-get autoremove && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN pip3 install --upgrade pip; \
     pip3 install "ansible==${ANSIBLE_VERSION}" ansible-lint pywinrm>=0.3.0 boto3; \
